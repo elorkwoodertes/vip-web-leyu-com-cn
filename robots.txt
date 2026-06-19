@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://elorkwoodertes.github.io/vip-web-leyu-com-cn/sitemap.xml
