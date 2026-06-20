@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚博体育 · 信息卡片式说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafbfc;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2.0rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b1a2b;
+            margin-bottom: 0.3rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-left: 4px solid #2c7be5;
+            padding-left: 0.9rem;
+            margin: 2.4rem 0 1rem 0;
+            color: #0f1e2f;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: #1f2f3f;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #2a3a4a;
+        }
+
+        a {
+            color: #1e6dc7;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #1e6dc7;
+        }
+
+        /* 主视觉区域 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 8px 20px rgba(0, 20, 40, 0.04);
+            border: 1px solid #eef0f3;
+        }
+
+        .hero-sub {
+            font-size: 0.95rem;
+            color: #5b6f83;
+            margin-top: 0.2rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hero-sub span {
+            background: #eef2f7;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #1f3a5c;
+        }
+
+        .hero p {
+            font-size: 1.02rem;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.4rem 0 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.4rem 1.3rem;
+            border: 1px solid #e7ebf0;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 20, 40, 0.05);
+        }
+
+        .card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+        }
+
+        .card p {
+            font-size: 0.94rem;
+            color: #3a4d62;
+            margin-bottom: 0;
+        }
+
+        /* 人群卡片 */
+        .audience-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.8rem;
+            margin: 1rem 0 1.6rem 0;
+        }
+
+        .audience-tag {
+            background: #ebf2fa;
+            border-radius: 40px;
+            padding: 0.35rem 1.1rem;
+            font-size: 0.9rem;
+            color: #1a3a5c;
+            border: 1px solid #d6e2f0;
+        }
+
+        /* 自然链接段落 */
+        .link-paragraph {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            border: 1px solid #e7ebf0;
+            margin: 2rem 0;
+        }
+
+        .link-paragraph p {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-brief {
+            margin: 2rem 0 1.2rem 0;
+            border-top: 1px solid #e3e8ef;
+            padding-top: 1.6rem;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #0b1a2b;
+            min-width: 6.2rem;
+        }
+
+        .faq-a {
+            color: #2f4055;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e3e8ef;
+            margin: 1.8rem 0;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #6d7f94;
+            border-top: 1px solid #e3e8ef;
+            padding-top: 1.4rem;
+            margin-top: 2.2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .hero {
+                padding: 1.6rem 1.2rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .audience-list {
+                gap: 0.4rem 0.6rem;
+            }
+            .faq-item {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .faq-q {
+                min-width: auto;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .card-grid {
+                gap: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+        <h1>亚博体育 · 稳定入口说明</h1>
+        <div class="hero-sub">
+            <span>信息卡片式</span>
+            <span>简洁专业</span>
+        </div>
+        <p>
+            作为综合性体育服务品牌，<a href="https://mains-yabo.com">亚博体育</a> 持续为关注者提供稳定的信息入口与清晰的导航结构。
+            本页面从“用途卡片”“适合人群”“常见理解”三个角度，以克制、真实的方式介绍该平台的使用场景与访问方式。
+        </p>
+    </div>
+
+    <!-- 用途卡片 -->
+    <h2>用途卡片</h2>
+    <div class="card-grid">
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>赛事浏览</h3>
+            <p>通过分类入口快速查看当前热门联赛、杯赛的赛程与动态，适合日常关注体育赛事的用户。</p>
+        </div>
+        <div class="card">
+            <div class="icon">📋</div>
+            <h3>数据参考</h3>
+            <p>整合球队战绩、交锋记录、积分排名等常用数据模块，辅助用户自行判断与信息收集。</p>
+        </div>
+        <div class="card">
+            <div class="icon">🧭</div>
+            <h3>导航组件</h3>
+            <p>提供频道、赛事分类、搜索等工具，降低信息查找成本，提升浏览效率。</p>
+        </div>
+        <div class="card">
+            <div class="icon">🔗</div>
+            <h3>入口直达</h3>
+            <p>用户可直接通过主域名 <a href="https://mains-yabo.com">亚博体育</a> 获取上述服务，无需多次跳转。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <h2>适合人群</h2>
+    <div class="audience-list">
+        <span class="audience-tag">⚽ 足球爱好者</span>
+        <span class="audience-tag">🏀 篮球关注者</span>
+        <span class="audience-tag">📊 数据型用户</span>
+        <span class="audience-tag">🧩 多赛事浏览者</span>
+        <span class="audience-tag">📱 移动端用户</span>
+        <span class="audience-tag">🖥️ 桌面端使用者</span>
+    </div>
+    <p style="margin-top: -0.2rem;">
+        无论您是以信息查询为主，还是习惯系统性地跟踪联赛动态，均可从稳定入口获得一致体验。
+        建议根据自身需求选择相应模块，无需频繁切换渠道。
+    </p>
+
+    <!-- 自然链接段落 -->
+    <div class="link-paragraph">
+        <h3 style="margin-bottom: 0.2rem;">关于访问与页面说明</h3>
+        <p>
+            本页面作为介绍用途，不替代平台本身的功能界面。如需直接使用各项服务，请通过浏览器前往 <a href="https://mains-yabo.com">亚博体育</a> 的对应栏目。
+            页面结构保持简洁，减少多余装饰，方便用户聚焦内容本身。
+        </p>
+        <p>
+            团队持续维护域名可用性与信息更新，若遇到访问波动，可稍后重试或检查本地网络设置。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2>常见理解摘要</h2>
+    <div class="faq-brief">
+        <div class="faq-item">
+            <div class="faq-q">页面定位？</div>
+            <div class="faq-a">本页仅作信息介绍与导航说明，不包含实时数据或互动功能，属于描述型页面。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">链接安全？</div>
+            <div class="faq-a">文中链接指向 <a href="https://mains-yabo.com">亚博体育</a> 主站，用户可根据自身判断与安全软件进行验证。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">内容更新？</div>
+            <div class="faq-a">本介绍页陈述基础用途与人群，不承诺实时变动，具体以平台实际展示为准。</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer-note">
+        <p>本页面由信息卡片式结构组织，内容保持简洁专业，不包含诱导性表述或夸大承诺。请依据个人需求合理使用网络服务。</p>
+    </div>
+
+</div>
+</body>
+</html>
