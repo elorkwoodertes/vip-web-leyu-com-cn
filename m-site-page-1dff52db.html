@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hth · 日常查询与对照</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f2f4;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2933;
+            line-height: 1.65;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 920px;
+            width: 100%;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: #f7f9fb;
+            border-radius: 28px;
+            padding: 3rem 2.2rem 2.8rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e3e8ee;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f2b39;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            color: #5c6a7a;
+            font-weight: 380;
+            border-bottom: 2px solid #d1d9e2;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: #37474f;
+        }
+
+        /* 卡片通用设计 */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.01);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 480;
+            color: #1f2a38;
+            margin-bottom: 1.1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            margin-bottom: 1.1rem;
+            color: #31414f;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: #eef3f9;
+            border-left: 4px solid #7e95ab;
+            padding: 0.8rem 1.4rem;
+            border-radius: 10px;
+            margin: 1.4rem 0 1rem;
+            font-size: 0.98rem;
+            color: #1f2e3c;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e1e8f0;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #2a3a4a;
+            font-weight: 450;
+            margin-right: 0.5rem;
+            margin-bottom: 0.4rem;
+            border: 1px solid #cdd6e0;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 1rem;
+            padding: 1.8rem 2rem;
+            background: #eef2f6;
+            border-radius: 40px;
+            border: 1px solid #dce3ec;
+            text-align: center;
+            color: #2b3e50;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .footer-note a {
+            color: #1f3b57;
+            text-decoration: none;
+            font-weight: 520;
+            border-bottom: 1.5px solid #a1b7cb;
+            padding-bottom: 1px;
+            transition: border-color 0.2s;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1f3b57;
+        }
+
+        .meta-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.2rem;
+            margin: 1.2rem 0 0.4rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .meta-list li {
+            font-size: 0.95rem;
+            color: #3f5566;
+            background: #eef2f8;
+            padding: 0.2rem 1rem 0.2rem 1.1rem;
+            border-radius: 40px;
+            border: 1px solid #d6e0ea;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d6dfe9;
+            margin: 1.8rem 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero { padding: 2rem 1.2rem; }
+            .hero h1 { font-size: 1.9rem; }
+            .card { padding: 1.5rem 1.2rem; }
+            .footer-note { padding: 1.4rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="hero">
+        <h1>日常查阅 · 对照 · 延伸</h1>
+        <div class="sub">hth · 轻量信息锚点</div>
+        <p>在信息流动越来越快的环境里，一个稳定的参照点能让日常查询更有效。<br>简洁、清晰、不堆砌——这就是 <a href="https://m-site-hth.com" style="color:#1f3b57;text-decoration:underline;text-underline-offset:3px;">hth</a> 所呈现的风格。</p>
+    </div>
+
+    <div class="card">
+        <h2>为什么需要固定的对照页面</h2>
+        <p>浏览、搜索、确认……许多时候我们只是需要一个可靠的页面来核对条目或获取概览。<strong>hth</strong> 不追求花哨的动效，而是把信息组织成容易扫描的模块，让眼睛快速找到重点。</p>
+        <p>无论是工作间隙查阅参考，还是随手打开对照参数，一个干净的基础页面能让注意力停留在内容上，而不是被布局分散。这种「安静但准确」的体验，正是日常信息场景里最舒服的节奏。</p>
+        <div class="highlight">
+            ⚡ 一个页面，一个焦点。不需要反复适应新版式，每次打开都可以直接进入查阅状态。
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>从三个侧面理解它的位置</h2>
+        <p>如果把 <a href="https://m-site-hth.com" style="color:#1f3b57;font-weight:500;">hth</a> 看作一个信息台，它通常承担三种角色：</p>
+        <ul style="margin:0.8rem 0 1rem 1.4rem;color:#31414f;list-style:square;">
+            <li><strong>快速查询</strong> —— 不绕路，不嵌套，直达需要的信息层级。</li>
+            <li><strong>对照基准</strong> —— 在多个来源之间比较时，可以作为稳定的参考版面。</li>
+            <li><strong>延伸入口</strong> —— 从这里开始，可以继续探索更具体的内容或相关资源。</li>
+        </ul>
+        <p>它并不试图取代搜索引擎或专业数据库，而是在「打开页面」和「找到内容」之间保留一段平缓的过渡。这种设计思路对日常使用者来说，少了一分压迫，多了一分从容。</p>
+    </div>
+
+    <div class="card">
+        <h2>场景与节奏·非典型 FAQ</h2>
+        <div style="display:flex;flex-wrap:wrap;gap:0.4rem 0.6rem;margin-bottom:1rem;">
+            <span class="tag"># 临时查证</span>
+            <span class="tag"># 条目对照</span>
+            <span class="tag"># 延伸阅读</span>
+            <span class="tag"># 轻量工具</span>
+        </div>
+        <p><strong>Q：</strong> 这个页面适合在什么场景下使用？<br>
+        <strong>A：</strong> 当你需要快速浏览信息结构、核对关键条目、或者想找一个没有干扰的阅读环境时，<a href="https://m-site-hth.com" style="color:#1f3b57;font-weight:500;">hth</a> 就是一个合适的去处。它不预设你的目的，只是提供一个干净的信息框架。</p>
+        <p style="margin-top:1rem;"><strong>Q：</strong> 与其他的信息页面相比，有什么不同？<br>
+        <strong>A：</strong> 更注重「可读性」与「低认知负荷」。没有弹窗、没有强制引导，版式尽量接近文档的阅读习惯。你可以把它当成一个带轻微设计的信息卡片集合。</p>
+        <hr>
+        <p style="color:#3b5568;font-size:0.98rem;">延伸阅读：如果你对某个条目感兴趣，可以继续在站内查找相关主题，也可以在页面底部找到前往主站的路径。</p>
+    </div>
+
+    <div class="footer-note">
+        <span>如果需要进入完整内容区域进行更深入的浏览，可以直接前往 </span>
+        <a href="https://m-site-hth.com">hth</a>
+        <span> · 保持温和而准确的查阅节奏</span>
+    </div>
+
+    <!-- 隐性的创作种子（仅用于内部变化，不显示） -->
+    <div style="display:none;">b7103b241accbee5</div>
+</div>
+</body>
+</html>
